@@ -1,3 +1,5 @@
+"use client";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -23,14 +25,14 @@ export default function CarrouselItemDialogContent({
 }: CarrouselItemInterface) {
   return (
     <DialogDescription className="py-4">
-      <section className="flex flex-col justify-start items-start w-full">
+      <section className="flex flex-col text-start justify-start items-start w-full">
         <p className="text-black">{phone}</p>
         <p className="text-black">{address}</p>
         <p className="text-black">{email}</p>
         <p className="text-black">{instagram}</p>
       </section>
-      <Carousel className="w-full">
-        <CarouselContent className="-ml-4 py-8">
+      <Carousel plugins={[Autoplay({ delay: 1500 })]} className="w-full">
+        <CarouselContent className="-ml-1 py-8">
           {media.map((mediaItem: any, index: number) => {
             return (
               <CarouselItem className="pl-1 h-52" key={index}>
@@ -52,7 +54,7 @@ export default function CarrouselItemDialogContent({
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-black">Descrição</AccordionTrigger>
-          <AccordionContent className="h-28 overflow-y-auto">
+          <AccordionContent className="flex justify-start items-start text-start h-28 overflow-y-auto">
             {description}
           </AccordionContent>
         </AccordionItem>
