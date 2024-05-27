@@ -13,7 +13,7 @@ export default async function HighLight() {
     <div className="lg:w-9/12 md:w-10/12 w-11/12 py-8">
       <p className="text-xl font-medium text-slate-400">Destaques</p>
       <Separator className="my-4" />
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-y-2 w-full">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-y-2 gap-x-2 w-full">
         {highlights.map((item, index) => {
           return (
             <div
