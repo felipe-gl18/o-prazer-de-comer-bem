@@ -31,9 +31,9 @@ export default function CarrouselItemDialogContent({
       </section>
       <Carousel className="w-full">
         <CarouselContent className="-ml-4 py-8">
-          {media.map((mediaItem: any) => {
+          {media.map((mediaItem: any, index: number) => {
             return (
-              <CarouselItem className="pl-1 h-52 ">
+              <CarouselItem className="pl-1 h-52" key={index}>
                 <div
                   style={{
                     background: `url(${mediaItem})`,

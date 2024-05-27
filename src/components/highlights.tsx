@@ -12,9 +12,12 @@ export default async function HighLight() {
       <p className="text-xl font-medium text-slate-400">Destaques</p>
       <Separator className="my-4" />
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-y-2 w-full">
-        {data.map((item) => {
+        {data.map((item, index) => {
           return (
-            <div className="flex items-center justify-center h-96 rounded-xl cursor-pointer">
+            <div
+              className="flex items-center justify-center h-96 rounded-xl cursor-pointer"
+              key={index}
+            >
               <div
                 style={{
                   background: `url(${item.url})`,

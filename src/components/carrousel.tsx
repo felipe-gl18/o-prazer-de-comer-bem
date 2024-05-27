@@ -18,6 +18,7 @@ export default async function Carrousel() {
       <CarouselContent className="px-2">
         {data.map((item) => {
           const {
+            id,
             title,
             description,
             url,
@@ -29,6 +30,7 @@ export default async function Carrousel() {
           } = item;
           return (
             <CarrouselItem
+              key={id}
               title={title}
               description={description}
               url={url}
