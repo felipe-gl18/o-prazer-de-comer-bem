@@ -1,18 +1,20 @@
+import { highlightsItemInterface } from "@/interfaces/interface";
 import { Separator } from "./ui/separator";
 export default async function HighLight() {
-  const response = await fetch("http://localhost:3001/highlights", {
+  const response = await fetch("http://localhost:3000/api", {
     method: "GET",
     next: {
       tags: ["highlights"],
     },
   });
-  const data: Array<any> = await response.json();
+  const data: any = await response.json();
+  const highlights: Array<highlightsItemInterface> = data.highlights;
   return (
     <div className="lg:w-9/12 md:w-10/12 w-11/12 py-8">
       <p className="text-xl font-medium text-slate-400">Destaques</p>
       <Separator className="my-4" />
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-y-2 w-full">
-        {data.map((item, index) => {
+        {highlights.map((item, index) => {
           return (
             <div
               className="flex items-center justify-center h-96 rounded-xl cursor-pointer"

@@ -5,18 +5,20 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import CarrouselItem from "./carrousel-item";
+import { CarrouselItemInterface } from "@/interfaces/interface";
 export default async function Carrousel() {
-  const response = await fetch("http://localhost:3001/restaurants", {
+  const response = await fetch("http://localhost:3000/api", {
     method: "GET",
     next: {
       tags: ["get_restaurants"],
     },
   });
-  const data: Array<any> = await response.json();
+  const data: any = await response.json();
+  const restaurants: Array<CarrouselItemInterface> = data.restaurants;
   return (
     <Carousel className="lg:w-9/12 md:9/12 sm:w-10/12 w-11/12">
       <CarouselContent className="px-2">
-        {data.map((item) => {
+        {restaurants.map((item) => {
           const {
             id,
             title,

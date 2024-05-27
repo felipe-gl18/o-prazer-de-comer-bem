@@ -1,4 +1,5 @@
 export interface CarrouselItemInterface {
+    id?:number,
     title?: string;
     description?: string;
     url?: string;
@@ -8,3 +9,8 @@ export interface CarrouselItemInterface {
     phone?: string;
     media: Array<any>;
   }
+
+export interface highlightsItemInterface {
+  id?: number,
+  url?: string,
+}
